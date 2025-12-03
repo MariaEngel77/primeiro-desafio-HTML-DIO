@@ -3,9 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desvendando o HTML</title>
 </head>
 <body>
-    
+    <h1 id="inicio">Desvendando o HTML</h1>
+    <hr>
+        <ul>
+            <li><a href="#client">O que é Client</a></li>
+            <li><a href="#server">O que é Server</a></li>
+            <li><a href="#interacao">Como funciona a interação Client ↔ Server</a></li>
+            <li><a href="#frontend">Front-end e Back-end: responsabilidades de cada lado</a></li>
+            <li><a href="#limitacao">Vantagens e Limitações do Modelo Client-Server</a></li>
+            <li><a href="#modelo">Por que esse modelo é tão usado hoje?</a></li>
+            <li><a href="#importante">HTML: o que é, para que serve e por que é tão importante na Web</a></li>
+            <li><a href="#funciona">Como o HTML funciona</a></li>
+            <li><a href="#evolucao">A evolução do HTML</a></li>
+            <li><a href="#semantica">Semântica: o grande diferencial do HTML moderno</a></li>
+            <li><a href="#tags">Explicação de algumas tags HTML</a></li>
+            <li><a href="#Referencia">Referências</a></li>
+        </ul>
+        <br>
+        <hr>
+
+        <h2 id="client"><u>O que é Client</u></h2>
+          <a href="#inicio">< voltar</a>  
+            <p>O termo <b>client</b> (cliente) refere-se ao dispositivo ou software que faz um pedido por um serviço ou recurso na internet. Pode ser:</p>
+                <ul>
+                    <li>Um navegador (Chrome, Firefox, etc.);</li>
+                    <li>Um aplicativo de celular ou desktop;</li>
+                    <li>Um computador, tablet ou smartphone.</li>
+                </ul>
+            <p>Ou seja: sempre que você clica em um link, abre um site ou envia uma requisição — você está usando um <i>client</i>. </p>
+            <p>O client é responsável por interagir com o usuário — mostrar páginas, receber cliques, preencher formulários, exibir dados. Ele envia pedidos para um servidor, solicitando páginas, dados, arquivos ou funcionalidades.</p>    
+            <h3>Exemplos do dia a dia como client</h3>
+                <ul>
+                    <li>Digitar um endereço de site no navegador,</li>
+                    <li>Abrir um app como WhatsApp ou e-mail no celular,</li>
+                    <li>Clicar em um link, preencher um formulário, pedir dados.</li>
+                </ul>
+            <p>Tudo isso é client pedindo algo de server.</p>   
+            <br>
+        <hr> 
+               
+
+        <h2 id="server"><u>O que é Server</u></h2>
+           <a href="#inicio">< voltar</a>     
+                <p>O <b>server</b> (servidor) é o programa ou máquina que fornece serviços, dados ou recursos solicitados pelos clients. Ele “escuta” pedidos, processa requisições e devolve respostas.</p>
+                <p>Um servidor pode ser um computador poderoso, um conjunto de servidores, uma instância na nuvem, contêineres — enfim: uma infraestrutura preparada para atender múltiplos clientes simultaneamente.</p>
+                <p>O servidor cuida de processos críticos: dados, lógica de negócios, armazenamento, autenticação, geração de páginas dinâmicas, entre outros. Ele é “o backstage” que entrega o que o client consome.</p>
+                   <h3>Exemplos de servidor no cotidiano</h3> 
+                    <ul>
+                        <li>O servidor de um site que entrega HTML/CSS/JS;</li>
+                        <li>Servidores de e-mail que armazenam e enviam mensagens;</li>
+                        <li>Servidores de banco de dados, APIs, armazenamento de arquivos.</li>
+
+                    </ul>
+                    <br>
+        <hr>
+
+        <h2 id="interacao"><u>Como funciona a interação Client ↔ Server</u></h2>
+           <a href="#inicio">< voltar</a>         
+                    <p>A base do funcionamento entre client e server segue um padrão chamado request-response (requisição → resposta):</p>
+                        <ol>
+                            <li>O client envia uma requisição para o servidor (ex: “Me envie a página inicial do site”);</li>
+                            <li>O server recebe a requisição, processa (busca dados, aplica lógica, monta resposta);</li>
+                            <li>O server envia a resposta de volta (HTML, dados JSON, arquivos, etc.);</li>
+                            <li>O client recebe a resposta e a exibe para o usuário (navegador renderiza HTML, app mostra dados, etc.).</li>
+                        </ol>
+                    <p>Esse modelo — conhecido como modelo cliente/servidor — é a base da internet moderna, web, serviços em nuvem, APIs, apps e muito mais.</p>
+                    <br>
+        <hr>
+
+        <h2 id="frontend"><u>Front-end e Back-end: responsabilidades de cada lado</u></h2>
+           <a href="#inicio">< voltar</a>             
+                    <p>No contexto de desenvolvimento web, costuma-se dividir:</p>
+                        <blockquote><b>Front-end</b> (lado do client): tudo o que o usuário vê — HTML, CSS, JavaScript, interface, interação. Ele consome dados do servidor e exibe de forma amigável.</blockquote>
+                        <blockquote><b>Back-end</b> (lado do server): lógica da aplicação, armazenamento de dados, regras de negócio, controle de acesso, processamento, etc. </blockquote>
+                    <p>Essa divisão permite manter o sistema organizado, seguro e eficiente — clientes leves e interativos, servidores potentes e confiáveis.</p>
+                    <br>
+                    <hr>
+
+        <h2 id="limitacao"><u>Vantagens e Limitações do Modelo Client-Server</u></h2>
+           <a href="#inicio">< voltar</a>             
+              <h3>Vantagens:</h3>      
+                    <ul>
+                       <li><b>Centralização de dados</b>: tudo está no servidor — fácil de manter e atualizar.</li> 
+                       <li><b>Escalabilidade</b>: servidores podem atender muitos clients ao mesmo tempo; basta aumentar recursos.</li>
+                       <li><b>Independência de plataforma</b>: client e server podem usar sistemas operacionais diferentes; só precisam comunicar por protocolo comum. </li>
+                       <li><b>Segurança e controle</b>: dados sensíveis ficam no servidor, com regras de acesso, backups e controle centralizado.</li>
+                    </ul>
+                <h3>Limitações ou Desafios:</h3>
+                    <ul>
+                        <li><b>Ponto único de falha</b>: se o servidor cair, todos os clients perdem acesso.</li>
+                        <li><b>Sobrecarga</b>: se muitos clients fizerem requisições simultâneas, o servidor pode ficar lento ou travar.</li>
+                        <li><b>Dependência de rede</b>: sem conexão, client não consegue comunicar com server — web fica indisponível.</li>
+                    </ul>
+                    <br>
+        <hr>
+
+        <h2 id="modelo"><u>Por que esse modelo é tão usado hoje?</u></h2>
+           <a href="#inicio">< voltar</a>         
+                    <p>O modelo cliente/servidor virou padrão porque:</p>
+                        <ul>
+                            <li>Permite separar claramente as responsabilidades entre interface e lógica/dados;</li>
+                            <li>Facilita manutenção e escalabilidade;</li>
+                            <li>Funciona em redes — local ou via internet — e suporta desde páginas simples até aplicações complexas, APIs, bancos de dados, nuvem, e muito mais;</li>
+                            <li>Sustenta a web moderna, serviços em nuvem, aplicações distribuídas e o ecossistema de hoje.</li>
+                        </ul>
+                        <br>
+                <hr>
+
+        <h2 id="importante"><u>HTML: o que é, para que serve e por que é tão importante na Web</u></h2>
+           <a href="#inicio">< voltar</a>             
+                        <p>O <b>HTML (HyperText Markup Language)</b> é a linguagem base da Web. Toda página que você abre no navegador — seja um site simples ou um grande portal — utiliza HTML como estrutura fundamental. Criado para organizar e apresentar conteúdo na internet, ele define o que aparece na tela: textos, títulos, imagens, links, tabelas, formulários e muito mais.</p>
+                        <p>HTML não é linguagem de programação!   HTML é um arquivo de marcação.</p>
+                        <p>Ao contrário de linguagens de programação, o HTML não possui lógica de decisão ou cálculos: ele é uma <b>linguagem de marcação</b>, composta por tags que estruturam os elementos de uma página. Cada tag cumpre um propósito específico, permitindo que navegadores interpretem e exibam corretamente o conteúdo.</p>
+                    <br>
+        <hr>                
+
+        <h2 id="funciona"><u>Como o HTML funciona</u></h2>
+           <a href="#inicio">< voltar</a>             
+                        <p>Um documento HTML é composto por elementos organizados entre <tags>, que indicam o significado e a função de cada parte da página. Por exemplo:</p>
+                            <ul>
+                                <li><mark>< h1></mark>  representa um título principal;</li>
+                                <li><mark>< p></mark>  representa um parágrafo;</li>
+                                <li><mark>< img></mark>  insere uma imagem;</li>
+                                <li><mark>< a></mark> cria um link</li>
+                            </ul>
+                        <p>Essas marcações formam a base estrutural da página, que depois pode ser estilizada com <b>CSS</b> e tornada interativa com <b>JavaScript</b>.</p>
+                    <br>
+        <hr>
+
+        <h2 id="evolucao"><u>A evolução do HTML</u></h2>
+           <a href="#inicio">< voltar</a>                 
+                            <p>O HTML foi criado por <b>Tim Berners-Lee</b> no início da década de 1990 como parte de um sistema para tornar documentos científicos mais acessíveis. Desde então, a linguagem passou por diversas versões, até chegar ao <b>HTML5</b>, a versão moderna e padrão atual da Web.</p>
+                            <p>O HTML5 trouxe recursos essenciais, incluindo:</p>
+                                <ul>
+                                    <li>suporte nativo para áudio e vídeo;</li>
+                                    <li>tags semânticas como < header>, < article>, < footer>;</li>
+                                    <li>melhor acessibilidade;</li>
+                                    <li>suporte mais amplo para APIs e aplicativos web.</li>
+                                </ul>
+                            <p>Esse avanço tornou possível desenvolver sistemas complexos diretamente no navegador, como jogos, animações e aplicações web ricas.</p>
+                        <br>
+        <hr>               
+
+        <h2 id="semantica"><u>Semântica: o grande diferencial do HTML moderno</u></h2>
+           <a href="#inicio">< voltar</a>                     
+                            <p>Um dos pilares da evolução do HTML é a <b>semântica</b>, isto é, o uso de tags que carregam significado. Em vez de apenas desenhar a estrutura, o HTML5 permite descrever o papel de cada elemento, ajudando:</p>
+                                <ul>
+                                    <li>a <b>acessibilidade</b> (leitores de tela interpretam melhor);</li>
+                                    <li>o <b>SEO</b> (motores de busca compreendem a página);</li>
+                                    <li>a <b>organização do código</b>.</li>
+                                </ul>
+                            <p>Exemplos de tags semânticas modernas:</p>
+                                <ul>
+                                    <li><mark>< header></mark> – cabeçalho;</li>
+                                    <li><mark>< nav></mark> – menu de navegação</li>
+                                    <li><mark>< section></mark> – seção de conteúdo</li>
+                                    <li><mark>< article></mark> – conteúdo independente</li>
+                                    <li><mark>< footer></mark> – rodapé</li>
+                                </ul>
+                            <p>Essa abordagem torna a Web mais estruturada, acessível e alinhada às boas práticas.</p>
+                        <br>
+        <hr>
+
+        <h2 id="tags"><u>Explicação de algumas tags HTML</u></h2>
+           <a href="#inicio">< voltar</a>
+             <h3>Tags de Título – < h1> até < h6></h3>       
+                    <ul>
+                        <li><h1><mark>< h1></mark> – Título principal (o mais importante)</h1></li>
+                        <li><h2><mark>< h2></mark> – Subtítulo de nível 2</h2></li>
+                        <li><h3><mark>< h3></mark> – Subtítulo de nível 3</h3></li>
+                        <li><h4><mark>< h4></mark> – Subtítulo de nível 4</h4></li>
+                        <li><h5><mark>< h5></mark> – Subtítulo de nível 5</h5></li>
+                        <li><h6><mark>< h6></mark> – Subtítulo de nível 6 (menos importante)</h6></li>
+                    </ul>
+                        <p><b>Função</b>: Semântica, hierarquia e organização de conteúdo, essencial para SEO.</p>
+                        <br><br>
+                <h3><mark>< p></mark> — Parágrafo</h3>
+                    <p>Usado para escrever textos em bloco, como frases e parágrafos.</p>
+                    <br><br>
+                
+                <h3><mark>< mark></mark> — Texto marcado</h3>
+                    <p>Destaca um trecho como se estivesse marcado com marca-texto.</p>
+                    <br><br>
+                
+                <h3><mark>< small></mark> — Texto pequeno</h3>
+                    <p>Exibe o texto em tamanho reduzido, útil para notas, direitos autorais, etc.</p>
+                    <br><br>
+
+                <h3><mark>< i></mark> — Itálico</h3>
+                    <p>Deixa o texto inclinado. Usado para palavras estrangeiras, termos técnicos, nomes científicos etc.</p>
+                    <br><br>
+                
+                <h3><mark>< u></mark> — Sublinhado</h3>
+                    <p>Sublinha o texto. Use com moderação, pois pode confundir com links.</p>
+                    <br><br>
+
+                <h3><mark>< b></mark> — Negrito</h3>
+                    <p>Deixa o texto em destaque.</p>
+                    <br><br>
+
+                <h3><mark>< strong></mark> — Negrito semântico</h3>
+                    <p>Deixa o texto em destaque, mas com significado semântico de importância. É melhor que < b>.</p>
+                    <br><br>
+
+                <h3><mark>< ol></mark> — Listas Ordenadas</ol></h3>
+                    <p>Cria uma lista numerada. Ex.: 1, 2, 3…</p>
+                    <br><br>
+
+                <h3><mark>< ul></mark> — Listas Não Ordenadas</h3>
+                    <p>Cria uma lista com marcadores (bolinhas).</p>
+                    <br><br>
+
+                <h3><mark>< li></mark> — Item de lista</h3>
+                    <p>Representa cada item dentro de < ol> ou < ul>.</p>
+                    <br><br>
+
+                <h3><mark>< a></mark> — Hyperlink</h3>
+                    <p>Cria links clicáveis para outras páginas, sites ou seções.</p>
+                    <p>Atributos comuns:</p>
+                        <ul>
+                            <li>href — URL do link</li>
+                            <li>target="_blank" — abre em nova aba</li>
+                        </ul>
+                        <br><br>
+                <h3><mark>< hr></mark> — Linha horizontal</h3>
+                        <p>Cria uma linha para separar seções do conteúdo. Não precisa de fechamento.</p>
+                        <br><br>
+
+                <h3><mark>< sub></mark> — Subscrito (embaixo)</h3>
+                        <p>Texto menor e posicionado abaixo. Usado em fórmulas químicas, por exemplo: H< sub>2< /sub>O  (H<sub>2</sub>O).</p>
+                        <br><br>
+
+                <h3><mark>< sup></mark> — Sobrescrito (em cima)</h3>
+                        <p>Texto menor e posicionado acima. Usado em potências: 10< sup>2< /sup>  (10<sup>2</sup>)</p>
+                        <br><br>
+
+                <h3><mark>< blockquote></mark> — Citação em bloco</h3>        
+                        <p>Exibe uma citação longa, destacada e com recuo visual.</p>
+                        <br><br>
+                        <hr>
+
+        <h2 id="Referencia">Referências:</h2>
+           <a href="#inicio">< voltar</a> 
+                <br><br>
+                        <ul>
+                            <li><a href="https://www.dio.me/articles/o-que-sao-clients-e-servers-explicando-de-forma-simples-55de6653e98f?utm_source=chatgpt.com">O que são Clients e Servers? Explicando de forma simples</a></li>
+                            <li><a href="https://www.ibm.com/docs/pt-br/cics-ts/6.x?topic=interfaces-clientserver-model&utm_source=chatgpt.com">O Modelo Cliente/Servidor</a></li>
+                            <li><a href="https://www.akamai.com/pt/glossary/what-is-the-client-server-model?utm_source=chatgpt.com">O que é o modelo cliente/servidor?</a></li>
+                            <li><a href="https://www.techtarget.com/searchnetworking/definition/client-server?">client-server</a></li>
+                            <li><a href="https://jumpcloud.com/it-index/what-is-the-client-server-model?">What Is the Client-Server Model?</a></li>
+                            <li><a href="https://www.w3.org/History/1989/proposal.html">Information Management: A Proposal</a></li>
+                            <li><a href="https://www.w3.org/">Especificações e padrões web (referência oficial para HTML e demais tecnologias)</a></li>
+                            <li><a href="https://html.spec.whatwg.org/">HTML Living Standard — especificação viva do HTML (versão mantida pelo WHATWG).</a></li>
+                            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">HTML: Linguagem de Marcação de Hipertexto</a></li>
+                        </ul>
+           
 </body>
 </html>
